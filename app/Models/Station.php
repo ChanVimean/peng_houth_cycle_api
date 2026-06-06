@@ -20,6 +20,11 @@ class Station extends Model
         'status',
     ];
 
+    protected $casts = [
+        'latitude' => 'float',
+        'longitude' => 'float',
+    ];
+
     public function bikes()
     {
         return $this->hasMany(Bike::class);

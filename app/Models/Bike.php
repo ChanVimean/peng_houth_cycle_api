@@ -25,6 +25,15 @@ class Bike extends Model
         'description',
     ];
 
+    protected $casts = [
+        'station_id' => 'integer',
+        'battery_level' => 'integer',
+        'base_price' => 'float',
+        'base_minute' => 'integer',
+        'extra_price' => 'float',
+        'extra_minute' => 'integer',
+    ];
+
     public function station()
     {
         return $this->belongsTo(Station::class);
