@@ -25,6 +25,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/stations', [StationController::class, 'index']); // Show All
 Route::get('/stations/{station}', [StationController::class, 'show']); // Show one Station
 Route::get('/stations/{station}/bikes', [BikeController::class, 'byStation']); // Show all Bikes at specific Station
+Route::get('/bikes', [BikeController::class, 'index']); // Show all Bike
 Route::get('/bikes/{bike}', [BikeController::class, 'show']); // Show one Bike
 
 // Group Routes: Login Required

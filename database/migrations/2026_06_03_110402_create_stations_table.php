@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('address');
             $table->decimal('latitude', 10, 7);
             $table->decimal('longitude', 10, 7);
-            $table->integer('capacity');
+            $table->integer('capacity'); // Max bikes allowed
             // Status: normal, low, empty, overloaded, refilling, unavailable
             $table->string('status')->default('normal');
             $table->timestamps();
