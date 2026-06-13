@@ -20,8 +20,8 @@ Route::get('/test', function () {
 });
 
 // Auth Routes
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/auth/register', [AuthController::class, 'register']);
+Route::post('/auth/login', [AuthController::class, 'login']);
 
 // Public Routes
 Route::get('/stations', [StationController::class, 'index']); // Show All
@@ -33,7 +33,7 @@ Route::get('/bikes/{bike}', [BikeController::class, 'show']); // Show one Bike
 // Group Routes: Login Required
 Route::middleware('auth:sanctum')->group(function () {
     // Logout
-    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
 });
 
 // Group Routes: Customer Only
